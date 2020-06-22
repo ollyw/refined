@@ -23,6 +23,8 @@ class SemigroupAndMonoidLawTests extends AnyFunSuite with FunSuiteDiscipline wit
   checkAll("Semigroup[PosFloat]", SerializableTests.serializable(Semigroup[PosFloat]))
   // checkAll("Semigroup[PosDouble]", SemigroupTests[PosDouble].semigroup) // approximately associative
   checkAll("Semigroup[PosDouble]", SerializableTests.serializable(Semigroup[PosDouble]))
+  checkAll("Semigroup[PosBigDecimal]", SerializableTests.serializable(Semigroup[PosBigDecimal]))
+  checkAll("Semigroup[PosBigInt]", SerializableTests.serializable(Semigroup[PosBigInt]))
 
   // Negative semigroups
   checkAll("Semigroup[NegByte]", SemigroupTests[NegByte].semigroup)
@@ -37,6 +39,8 @@ class SemigroupAndMonoidLawTests extends AnyFunSuite with FunSuiteDiscipline wit
   checkAll("Semigroup[NegFloat]", SerializableTests.serializable(Semigroup[NegFloat]))
   // checkAll("Semigroup[NegDouble]", SemigroupTests[NegDouble].semigroup) // approximately associative
   checkAll("Semigroup[NegDouble]", SerializableTests.serializable(Semigroup[NegDouble]))
+  checkAll("Semigroup[NegBigDecimal]", SerializableTests.serializable(Semigroup[NegBigDecimal]))
+  checkAll("Semigroup[NegBigInt]", SerializableTests.serializable(Semigroup[NegBigInt]))
 
   // NonNegative monoids
   checkAll("Monoid[NonNegByte]", MonoidTests[NonNegByte].monoid)
@@ -51,11 +55,15 @@ class SemigroupAndMonoidLawTests extends AnyFunSuite with FunSuiteDiscipline wit
   checkAll("Monoid[NonNegFloat]", SerializableTests.serializable(Monoid[NonNegFloat]))
   // checkAll("Monoid[NonNegDouble]", MonoidTests[NonNegDouble].monoid) // approximately associative
   checkAll("Monoid[NonNegDouble]", SerializableTests.serializable(Monoid[NonNegDouble]))
+  checkAll("Monoid[NonNegBigDecimal]", SerializableTests.serializable(Monoid[NonNegBigDecimal]))
+  checkAll("Monoid[NonNegBigInt]", SerializableTests.serializable(Monoid[NonNegBigInt]))
 
   // NonPositive monoids
   // checkAll("Monoid[NonPosFloat]", MonoidTests[NonPosFloat].monoid) // approximately associative
   checkAll("Monoid[NonPosFloat]", SerializableTests.serializable(Monoid[NonPosFloat]))
   // checkAll("Monoid[NonPosDouble]", MonoidTests[NonPosDouble].monoid) // approximately associative
   checkAll("Monoid[NonPosDouble]", SerializableTests.serializable(Monoid[NonPosDouble]))
+  checkAll("Monoid[NonPosBigDecimal]", SerializableTests.serializable(Monoid[NonPosBigDecimal]))
+  checkAll("Monoid[NonPosBigInt]", SerializableTests.serializable(Monoid[NonPosBigInt]))
 
 }

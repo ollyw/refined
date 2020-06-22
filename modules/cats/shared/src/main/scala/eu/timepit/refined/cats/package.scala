@@ -37,6 +37,8 @@ package object cats {
   implicit val posLongSemigroup: Semigroup[PosLong] = getPosIntegralSemigroup[Long]
   implicit val posFloatSemigroup: Semigroup[PosFloat] = getSemigroup[Float, Positive]
   implicit val posDoubleSemigroup: Semigroup[PosDouble] = getSemigroup[Double, Positive]
+  implicit val posBigDecimalSemigroup: Semigroup[PosBigDecimal] = getSemigroup[BigDecimal, Positive]
+  implicit val posBigIntSemigroup: Semigroup[PosBigInt] = getSemigroup[BigInt, Positive]
 
   implicit val negByteSemigroup: Semigroup[NegByte] = getNegIntegralSemigroup[Byte]
   implicit val negShortSemigroup: Semigroup[NegShort] = getNegIntegralSemigroup[Short]
@@ -44,6 +46,8 @@ package object cats {
   implicit val negLongSemigroup: Semigroup[NegLong] = getNegIntegralSemigroup[Long]
   implicit val negFloatSemigroup: Semigroup[NegFloat] = getSemigroup[Float, Negative]
   implicit val negDoubleSemigroup: Semigroup[NegDouble] = getSemigroup[Double, Negative]
+  implicit val negBigDecimalSemigroup: Semigroup[NegBigDecimal] = getSemigroup[BigDecimal, Negative]
+  implicit val negBigIntSemigroup: Semigroup[NegBigInt] = getSemigroup[BigInt, Negative]
 
   // Monoid instances
   implicit val nonNegByteMonoid: Monoid[NonNegByte] = getNonNegIntegralMonoid[Byte]
@@ -52,9 +56,13 @@ package object cats {
   implicit val nonNegLongMonoid: Monoid[NonNegLong] = getNonNegIntegralMonoid[Long]
   implicit val nonNegFloatMonoid: Monoid[NonNegFloat] = getMonoid[Float, NonNegative]
   implicit val nonNegDoubleMonoid: Monoid[NonNegDouble] = getMonoid[Double, NonNegative]
+  implicit val nonNegBigDecimalMonoid: Monoid[NonNegBigDecimal] = getMonoid[BigDecimal, NonNegative]
+  implicit val nonNegBigIntMonoid: Monoid[NonNegBigInt] = getMonoid[BigInt, NonNegative]
 
   implicit val nonPosFloatMonoid: Monoid[NonPosFloat] = getMonoid[Float, NonPositive]
   implicit val nonPosDoubleMonoid: Monoid[NonPosDouble] = getMonoid[Double, NonPositive]
+  implicit val nonPosBigDecimalMonoid: Monoid[NonPosBigDecimal] = getMonoid[BigDecimal, NonPositive]
+  implicit val nonPosBigIntMonoid: Monoid[NonPosBigInt] = getMonoid[BigInt, NonPositive]
 
   private def getPosIntegralSemigroup[A: Semigroup: NonNegShift](
       implicit integral: Integral[A],
